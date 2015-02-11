@@ -1,7 +1,14 @@
 .jumbotron {
-  background-image: image-url("coding1.jpg");
+  background-image: image-url("coding2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  color: white;
+  background-position: 0 0; 
+  color: #DDEAEB;
   
 }
+
+.btn.btn-default.btn-lg {
+	background: #DDEAEB;
+	color: #7399D6;
+}
+
