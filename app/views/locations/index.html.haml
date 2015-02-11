@@ -3,10 +3,6 @@
 - @locations.each do |f|
 	= link_to f.name, location_path(f)
 	%br
-
-	= link_to "Edit", edit_location_path(f)
-	= link_to "Delete", location_path(f), method: :delete
-	%br
 	%br
 
 %br

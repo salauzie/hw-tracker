@@ -6,7 +6,7 @@ class LocationsController < ApplicationController
 
 	def new
 		@location = Location.new
-
+		@courses = Course.all
 	end
 
 	def show
