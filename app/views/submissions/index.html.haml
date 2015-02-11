@@ -1,3 +1,12 @@
 %h1 Submissions
 
+- @submissions.each do |f|
+	= f.description
+	= f.name
+	= link_to "Edit", edit_submission_path(f)
+	= link_to "Delete", submission_path(f), method: :delete
+	%br
+
+%br	
 = link_to "Home", root_path
+= link_to "Submit Assignment", new_submission_path

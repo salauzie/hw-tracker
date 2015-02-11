@@ -1,0 +1,8 @@
+= form_for @submission do |f|
+	= f.label :description
+	= f.text_area :description
+	%br
+	= f.label :name
+	= f.text_field :name
+	%br
+	= f.submit

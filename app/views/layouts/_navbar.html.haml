@@ -1,0 +1,13 @@
+%nav.navbar.navbar-default.navbar-static-top
+	.container
+		%ul.nav.nav-pills
+			%li.active{:role => "presentation"}
+				= link_to "Home", root_path
+			%li{:role => "presentation"}
+				= link_to "Courses", courses_path
+			%li{:role => "presentation"}
+				= link_to "Assignments", assignments_path
+			%li{:role => "presentation"}
+				= link_to "Locations", locations_path	
+			%li{:role => "presentation"}
+				= link_to "Submissions", submissions_path	
