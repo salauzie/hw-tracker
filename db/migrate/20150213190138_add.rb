@@ -1,4 +1,4 @@
-class AddGithubnameAndNameColumnsToUser < ActiveRecord::Migration
+class Add < ActiveRecord::Migration
   def change
   	add_column :users, :name, :string
   	add_column :users, :github_name, :string

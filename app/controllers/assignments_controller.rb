@@ -5,6 +5,11 @@ class AssignmentsController < ApplicationController
 
 	def new
 		@assignment = Assignment.new
+
+	end
+
+	def show
+		@assignment = Assignment.find params[:id]
 	end
 
 	def create

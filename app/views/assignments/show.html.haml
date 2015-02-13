@@ -1,0 +1,8 @@
+= @assignment.name
+%br
+
+= link_to "Edit", edit_assignment_path
+%br
+= link_to "Delete", assignment_path, method: :delete
+%br
+= link_to "Assignment Submissions", new_assignment_submission_path(@assignment)

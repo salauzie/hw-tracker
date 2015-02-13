@@ -1,10 +1,8 @@
 %h1 Assignments
 
 - @assignments.each do |f|
-	= f.name
-	= f.requirements
-	= link_to "Edit", edit_assignment_path(f)
-	= link_to "Delete", assignment_path(f), method: :delete
+	= link_to f.name, assignment_path(f)
+
 	%br
 	%br
 %br

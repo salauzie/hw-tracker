@@ -1,38 +1,51 @@
 class SubmissionsController < ApplicationController
 	def index
-		@submissions = Submission.all
+		@assignment = Assignment.find params[:assignment_id]
+		@submissions = @assignment.submissions
+	end
+
+	def show
+		@assignment = Assignment.find params[:assignment_id]
+		@submission = @assignment.submissions.find params[:id]
 	end
 
 	def new
-		@submission = Submission.new
+		@assignment = Assignment.find params[:assignment_id]
+		@submission = @assignment.submissions.new
 	end
 
 	def create
-		@submission = Submission.create submission_params
-		redirect_to submissions_path
+		@assignment = Assignment.find params[:assignment_id]
+		@submission = @assignment.submissions.create submission_params
+		redirect_to assignment_submissions_path
 	end	
 	
 	def edit
-		@submission = Submission.find params[:id]
+		@assignment = Assignment.find params[:assignment_id]
+		@submission = @assignment.submissions.find params[:id]
 	end
 
 	def update
-		@submission = Submission.find params[:id]
+		@assignment = Assignment.find params[:assignment_id]
+		@submission = @assignment.submissions.find params[:id]
 		@submission.update_attributes submission_params
-		redirect_to submissions_path	
+		redirect_to assignment_submissions_path	
 	end
 
 	def destroy
-		@submission = Submission.find params[:id]
+		@assignment = Assignment.find params[:assignment_id]
+		@submission = @assignment.submissions.find params[:id]
 		@submission.delete
-		redirect_to submissions_path
+		redirect_to assignment_submissions_path
 	end	
 
 private
 	def submission_params
 		params.require(:submission).permit(
 			:description,
-			:name
+			:name,
+			assignment_ids: [],
+			submission_ids: []
 			)
 	end	
 end
